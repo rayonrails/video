@@ -1,0 +1,17 @@
+<% title "Channels" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for channel in @channels %>
+    <tr>
+      <td><%= channel.name %></td>
+      <td><%= link_to "Show", channel %></td>
+      <td><%= link_to "Edit", edit_channel_path(channel) %></td>
+      <td><%= link_to "Destroy", channel, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Channel", new_channel_path %></p>

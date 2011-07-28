@@ -1,0 +1,41 @@
+<% title "Clips" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Clip File Name</th>
+    <th>Clip Content Type</th>
+    <th>Clip File Size</th>
+    <th>Clip Update At</th>
+    <th>Live</th>
+    <th>Category</th>
+    <th>Channel</th>
+    <th>User</th>
+    <th>Position</th>
+  </tr>
+  <% for clip in @clips %>
+    <tr>
+      <td><%= clip.title %></td>
+      <td><%= clip.description %></td>
+      <td><%= clip.clip_file_name %></td>
+      <td><%= clip.clip_content_type %></td>
+      <td><%= clip.clip_file_size %></td>
+      <td><%= clip.clip_update_at %></td>
+      <td><%= clip.live %></td>
+      <td><%= clip.category_id %></td>
+      <td><%= clip.channel_id %></td>
+      <td><%= clip.user_id %></td>
+      <td><%= clip.position %></td> 
+      <td><%= link_to "Show", clip %></td>
+      <% if can? :update, @clip %>
+      <td><%= link_to "Edit", edit_clip_path(clip) %></td>
+      <%end%>
+      <% if can? :destroy, @clip%>
+      <td><%= link_to "Destroy", clip, :confirm => 'Are you sure?', :method => :delete %></td>
+      <%end%>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Clip", new_clip_path %></p>

@@ -1,0 +1,20 @@
+<% title "Question" %>
+
+<p>
+  <strong>Clip:</strong>
+  <%= @question.clip_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @question.user_id %>
+</p>
+<p>
+  <strong>Question:</strong>
+  <%= @question.question %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_question_path(@question) %> |
+  <%= link_to "Destroy", @question, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", questions_path %>
+</p>

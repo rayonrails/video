@@ -1,0 +1,46 @@
+<%= form_for @clip do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :clip_file_name %><br />
+    <%= f.text_field :clip_file_name %>
+  </p>
+  <p>
+    <%= f.label :clip_content_type %><br />
+    <%= f.text_field :clip_content_type %>
+  </p>
+  <p>
+    <%= f.label :clip_file_size %><br />
+    <%= f.text_field :clip_file_size %>
+  </p>
+  <p>
+    <%= f.label :clip_update_at %><br />
+    <%= f.datetime_select :clip_update_at %>
+  </p>
+  <p>
+    <%= f.label :live %><br />
+    <%= f.check_box :live %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Category.find(:all), :id, :name%>
+  </p>
+  <p>
+    <%= f.label :channel_id %><br />
+    <%= f.collection_select :channel_id, Channel.find(:all), :id, :name%>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </p>
+  <p><%= f.hidden_field :user_id %>
+    <%= f.submit %>
+  </p>
+<% end %>

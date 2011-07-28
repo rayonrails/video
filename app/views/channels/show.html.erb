@@ -1,0 +1,14 @@
+<% title "Channel" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @channel.name %>
+</p>
+
+<p>
+ <% if can? :update || :destroy, @channel%>
+  	<%= link_to "Edit", edit_channel_path(@channel) %> |
+  	<%= link_to "Destroy", @channel, :confirm => 'Are you sure?', :method => :delete %> |
+ <% end %>
+  <%= link_to "View All", channels_path %>
+</p>

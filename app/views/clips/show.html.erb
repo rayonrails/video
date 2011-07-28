@@ -1,0 +1,52 @@
+<% title "Clip" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @clip.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @clip.description %>
+</p>
+<p>
+  <strong>Clip File Name:</strong>
+  <%= @clip.clip_file_name %>
+</p>
+<p>
+  <strong>Clip Content Type:</strong>
+  <%= @clip.clip_content_type %>
+</p>
+<p>
+  <strong>Clip File Size:</strong>
+  <%= @clip.clip_file_size %>
+</p>
+<p>
+  <strong>Clip Update At:</strong>
+  <%= @clip.clip_update_at %>
+</p>
+<p>
+  <strong>Live:</strong>
+  <%= @clip.live %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @clip.category_id %>
+</p>
+<p>
+  <strong>Channel:</strong>
+  <%= @clip.channel_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @clip.user_id %>
+</p>
+<p>
+  <strong>Position:</strong>
+  <%= @clip.position %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_clip_path(@clip) %> |
+  <%= link_to "Destroy", @clip, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", clips_path %>
+</p>
